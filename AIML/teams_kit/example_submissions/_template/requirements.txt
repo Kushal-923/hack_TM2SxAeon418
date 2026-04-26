@@ -1,8 +1,0 @@
-# Replace with your actual pinned deps.
-# Run `pip freeze > requirements.txt` from your working environment
-# once your code is stable, then prune anything you don't actually import.
-
-terratorch>=1.2.4
-diffusers==0.30.0
-torch>=2.1.0
-# ... your project-specific additions here

@@ -205,11 +205,11 @@ def project_footprint(q_BN: np.ndarray,
             return None
         corners.append(c)
 
-    # Off-nadir angle: angle between boresight in ECEF and local up at the hit.
-    hit_ecef = _ray_ellipsoid_intersect(r_ecef, b_E)
-    local_up = hit_ecef / np.linalg.norm(hit_ecef)
-    # Boresight points from sat to ground; invert for up comparison.
-    cos_off = float(np.dot(-b_E, local_up))
+     # Off-nadir angle: at the SATELLITE, between boresight and local nadir.
+    # (Not the target-side zenith/incidence angle, which differs by the
+    #  sat-target central angle — ~9 deg for case 3's ~1009 km cross-track.)
+    sat_nadir = -r_ecef / np.linalg.norm(r_ecef)
+    cos_off = float(np.dot(b_E, sat_nadir))
     cos_off = max(-1.0, min(1.0, cos_off))
     off_nadir = math.degrees(math.acos(cos_off))
 
