@@ -205,7 +205,11 @@ def project_footprint(q_BN: np.ndarray,
             return None
         corners.append(c)
 
+<<<<<<< HEAD
      # Off-nadir angle: at the SATELLITE, between boresight and local nadir.
+=======
+    # Off-nadir angle: at the SATELLITE, between boresight and local nadir.
+>>>>>>> a5b3e0cb122e963f61d193a197643a2877365676
     # (Not the target-side zenith/incidence angle, which differs by the
     #  sat-target central angle — ~9 deg for case 3's ~1009 km cross-track.)
     sat_nadir = -r_ecef / np.linalg.norm(r_ecef)
